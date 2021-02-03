@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.persistence.EntityNotFoundException;
+
 import com.devsuperior.dscatalog_client.dto.ClientDTO;
 import com.devsuperior.dscatalog_client.entities.Client;
 import com.devsuperior.dscatalog_client.repositories.ClientRepository;
@@ -38,6 +40,18 @@ public class ClientService {
         copyDtoToEntity(dto, entity);
         entity = repository.save(entity);
         return new ClientDTO(entity);
+    }
+
+    @Transactional
+    public ClientDTO update(Long id, ClientDTO dto) {
+        try {
+            Client entity = repository.getOne(id);
+            copyDtoToEntity(dto, entity);
+            entity = repository.save(entity);
+            return new ClientDTO(entity);
+        } catch (EntityNotFoundException e) {
+            throw new ResourceNotFoundException("Id not found " + id);
+        }
     }
 
     private void copyDtoToEntity(ClientDTO dto, Client entity) {
