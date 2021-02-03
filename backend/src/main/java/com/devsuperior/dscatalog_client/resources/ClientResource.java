@@ -2,6 +2,7 @@ package com.devsuperior.dscatalog_client.resources;
 
 import java.util.List;
 
+import com.devsuperior.dscatalog_client.dto.ClientDTO;
 import com.devsuperior.dscatalog_client.entities.Client;
 import com.devsuperior.dscatalog_client.services.ClientService;
 
@@ -19,8 +20,8 @@ public class ClientResource {
     private ClientService service;
 
     @GetMapping
-    public ResponseEntity<List<Client>> findAll() {
-        List<Client> list = service.findAll();
+    public ResponseEntity<List<ClientDTO>> findAll() {
+        List<ClientDTO> list = service.findAll();
         return ResponseEntity.ok().body(list);
     }
 }
