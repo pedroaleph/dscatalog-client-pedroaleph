@@ -8,3 +8,5 @@ INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALU
 INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Raika', '75457789674', 10000.0, '1985-04-05T07:02:03Z', 5, Now());
 INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Wolf Matos', '54456689187', 7100.0, '2001-02-10T10:20:30Z', 4, Now());
 INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Armando', '67456689355', 4500.0, '1971-03-10T09:50:01Z', 1, Now());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Mário', '67446573285', 5400.0, '1971-02-28T09:48:06Z', 3, Now());
+INSERT INTO tb_client (name, cpf, income, birth_date, children, created_at) VALUES ('Vívia', '45737213249', 4700.0, '1980-07-09T10:05:18Z', 2, Now());
